@@ -22,3 +22,29 @@ class Ninja{
 const ninja1 = new Ninja("Hyabusa");
 ninja1.sayName();
 ninja1.showStats();
+
+/*
+// ejemplo de salida
+const superSensei = new Sensei("Master Splinter");
+superSensei.speakWisdom();
+// -> "Lo que un programador puede hacer en un mes, dos programadores pueden hacerlo en dos meses."
+superSensei.showStats();
+// -> "Nombre: Master Splinter, Salud: 210, Velocidad: 10, Fuerza: 10"
+*/
+
+class Sensei extends Ninja {
+    constructor(nombre, salud = 200, velocidad = 10,fuerza = 10, sabiduria = 10) {
+        super(nombre, salud, velocidad, fuerza);
+        this.sabiduria = sabiduria;
+    }
+
+    speakWisdom() {
+        console.log("La sabiduría del sensei dice: El camino hacia la victoria no es fácil pero es inevitable");
+        super.drinkSake();
+    }
+}
+
+const sensei1 = new Sensei("Master Splinter", 100);
+console.log(sensei1);
+sensei1.speakWisdom();
+console.log(sensei1);
